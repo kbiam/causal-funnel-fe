@@ -25,7 +25,6 @@ const QuizPage = () => {
     const loadQuizSession = async () => {
       try {
         const data = await ApiService.getQuizSession(currentSession);
-        
         if (data.completed || data.expired) {
           navigate(`/results/${currentSession}`);
           return;

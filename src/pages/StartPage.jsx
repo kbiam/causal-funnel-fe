@@ -77,6 +77,16 @@ const StartPage = () => {
     }
   };
 
+  const handleHistory = async () => {
+    if (!email.trim()) return;
+
+    setIsLoading(true);
+    setError('');
+
+    localStorage.setItem('userEmail', email.trim());
+    navigate(`/history/${email.trim()}`);
+  }
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
@@ -124,7 +134,22 @@ const StartPage = () => {
             )}
           </button>
 
-          {email && (
+          <button
+            onClick={handleHistory}
+            disabled={isLoading || !email.trim()}
+            className="w-full bg-gray-100 text-gray-700  py-3 rounded-lg font-semibold  hover:bg-gray-200  transform transition-all duration-200 disabled:opacity-50 flex items-center justify-center space-x-2 cursor-pointer"
+          >
+            {isLoading ? (
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+            ) : (
+              <>
+                <History className="h-4 w-4" />
+                <span>History</span>
+              </>
+            )}
+          </button>
+
+          {/* {email && (
             <div className="flex space-x-2">
               <Link
                 to={`/history/${email}`}
@@ -134,7 +159,7 @@ const StartPage = () => {
                 <span>History</span>
               </Link>
             </div>
-          )}
+          )} */}
         </div>
         
         <div className="mt-8 p-4 bg-blue-50 rounded-lg">

@@ -88,7 +88,7 @@ const DetailedReportPage = () => {
           </div>
 
           {/* Summary Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="text-center p-4 bg-blue-50 rounded-lg">
               <div className="text-2xl font-bold text-blue-600">{report.percentage}%</div>
               <div className="text-sm text-blue-700">Score</div>
@@ -105,10 +105,7 @@ const DetailedReportPage = () => {
               <div className="text-2xl font-bold text-yellow-600">{report.summary.unanswered}</div>
               <div className="text-sm text-yellow-700">Unanswered</div>
             </div>
-            <div className="text-center p-4 bg-purple-50 rounded-lg">
-              <div className="text-2xl font-bold text-purple-600">{formatDuration(report.timeTaken)}</div>
-              <div className="text-sm text-purple-700">Time Taken</div>
-            </div>
+
           </div>
         </div>
 

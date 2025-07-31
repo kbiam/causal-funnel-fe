@@ -146,7 +146,7 @@ const UserHistoryPage = () => {
               <h3 className="text-lg font-semibold text-gray-600 mb-2">No Tests Found</h3>
               <p className="text-gray-500 mb-4">You haven't taken any quizzes yet.</p>
               <button
-                onClick={() => navigate('/')}
+                onClick={handleStartQuiz}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Take Your First Quiz
